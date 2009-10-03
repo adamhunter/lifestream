@@ -1,0 +1,9 @@
+facebook : 
+  url : http://www.facebook.com/feeds/status.php?id=778750315&viewer=778750315&key=110b5987c2&format=rss20
+  format : Rss2
+pandora : 
+  url : http://feeds.pandora.com/feeds/people/ah125i/favorites.xml
+  format : Rss2
+twitter : 
+  url : http://twitter.com/statuses/user_timeline/15344521.rss
+  format : Rss2
