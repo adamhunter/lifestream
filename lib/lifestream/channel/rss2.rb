@@ -17,7 +17,7 @@ module Lifestream
     end
   
     def to_branch(branch)
-      Lifestream::Branch.new(branch.pubDate, branch.title, branch.description)
+      Lifestream::Branch.new(self, branch.pubDate, branch.title, branch.description)
     end
   
     class MalformedFeed < StandardError; end
