@@ -10,7 +10,7 @@ module Lifestream
   #   Defaults to gem location, you will probably want to set this
   def self.options
     @options ||= {
-      :config => File.join(File.expand_path(File.dirname(__FILE__)), '..', 'lifestream.yml'),
+      :config => 'lifestream.yml',
       :whiny  => true
     }
   end
