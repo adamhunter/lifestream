@@ -8,7 +8,11 @@ class StreamTest < Test::Unit::TestCase
     
     should "return its branches in descending chronological order" do
       @lifestream.branches.should_not be_nil
-      @lifestream.branches[0].published_at.should > @lifestream.branches[1].published_at
+      @lifestream.branches.each do |branch|
+        compare ||= branch
+        compare.published_at.should >= branch.published_at
+        compare = branch
+      end
     end
     
   end

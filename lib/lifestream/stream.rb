@@ -13,7 +13,7 @@ module Lifestream
       @channels.each do |channel|
         channel.branches.each { |b| @branches << b }
       end
-      @branches.sort { |a,b| a.published_at <=> b.published_at }.reverse
+      @branches.sort! { |a,b| a.published_at <=> b.published_at }.reverse!
     end
     
   end

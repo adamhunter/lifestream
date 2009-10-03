@@ -10,6 +10,10 @@ module Lifestream
       end
     end
     
+    def inspect
+      "#<Lifestream::Branch @published_at=#{@published_at} @title=#{@title} @body=#{@body} @channel=#{!!@channel}>"
+    end
+    
     class InvalidBranch < StandardError; end
     
   end
