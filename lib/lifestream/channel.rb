@@ -27,7 +27,7 @@ module Lifestream
     def response_with_cache
       yield and return unless Lifestream.options[:cache]
       cache_path = File.join(Lifestream.options[:cache], "#{name}.xml")
-      if !File.exist?(cache_path) || File.mtime(cache_path) + Lifesteam.options[:cache_expiration] < Time.now
+      if !File.exist?(cache_path) || File.mtime(cache_path) + Lifestream.options[:cache_expiration] < Time.now
         yield
         cache = File.new(cache_path, 'wb')
         cache.flock(File::LOCK_EX)
