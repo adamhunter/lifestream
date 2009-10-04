@@ -73,5 +73,10 @@ namespace :lifestream do
   task :configure do
     
   end
+  
+  desc "Clear lifestream cache"
+  task :"cache:clear" do
+    FileUtils.remove_dir Lifestream.options[:cache]
+  end
 
 end

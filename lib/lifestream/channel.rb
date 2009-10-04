@@ -26,6 +26,7 @@ module Lifestream
     
     def response_with_cache
       yield and return unless Lifestream.options[:cache]
+      check_for_cache_dir
       cache_path = File.join(Lifestream.options[:cache], "#{name}.xml")
       if !File.exist?(cache_path) || File.mtime(cache_path) + Lifestream.options[:cache_expiration] < Time.now
         yield
@@ -36,6 +37,10 @@ module Lifestream
       else
         @raw_data = File.read(cache_path)
       end
+    end
+    
+    def check_for_cache_dir
+      FileUtils.mkpath(Lifestream.options[:cache]) unless File.directory?(Lifestream.options[:cache])
     end
     
     def create_branches

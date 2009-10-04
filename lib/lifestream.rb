@@ -16,7 +16,7 @@ module Lifestream
     @options ||= {
       :config => 'lifestream.yml',
       :whiny  => true,
-      :cache  => 'tmp',
+      :cache  => 'tmp/lifestream',
       :cache_expiration => (60 * 60 * 1)
     }
   end
