@@ -9,11 +9,11 @@ module Lifestream
     def parse
       @feed = RSS::Parser.parse(@raw_data, false)
     rescue => e
-      raise Lifestream::Channel::Rss2::MalformedFeed.new("The feed from #{@url} could not be parsed") if Lifestream.options[:whiny]
+      raise Lifestream::Channel::Rss2::MalformedFeed.new("The feed from #{@request.url} could not be parsed #{e}") if Lifestream.options[:whiny]
     end
   
     def feed_to_a
-      @feed.items || []
+      @feed.items
     end
   
     def to_branch(branch)

@@ -8,10 +8,16 @@ module Lifestream
   #   Defaults to true 
   # * config: Path to the lifestream.yml file that contains the feeds to download.
   #   Defaults to gem location, you will probably want to set this
+  # * cache: The path that the downloaded feeds should be cached in, defaults to tmp
+  #   Set cache to false to disable it
+  # * cache_expiration: The amount of time that the cache is fresh for
+  #   Defaults to 1 hour
   def self.options
     @options ||= {
       :config => 'lifestream.yml',
-      :whiny  => true
+      :whiny  => true,
+      :cache  => 'tmp',
+      :cache_expiration => (60 * 60 * 1)
     }
   end
   
